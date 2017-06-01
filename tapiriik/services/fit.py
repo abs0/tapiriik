@@ -40,14 +40,56 @@ class FITLapTriggerMethod:
 
 
 class FITActivityType:
-	GENERIC = 0
-	RUNNING = 1
-	CYCLING = 2
-	TRANSITION = 3
-	FITNESS_EQUIPMENT = 4
-	SWIMMING = 5
-	WALKING = 6
-	ALL = 254
+    GENERIC = 0
+    RUNNING = 1
+    CYCLING = 2
+    TRANSITION = 3
+    FITNESS_EQUIPMENT = 4
+    SWIMMING = 5
+    BASKETBALL = 6,
+    SOCCER = 7,
+    TENNIS = 8,
+    AMERICAN_FOOTBALL = 9,
+    TRAINING = 10,
+    WALKING = 11,
+    CROSS_COUNTRY_SKIING = 12,
+    ALPINE_SKIING = 13,
+    SNOWBOARDING = 14,
+    ROWING = 15,
+    MOUNTAINEERING = 16,
+    HIKING = 17,
+    MULTISPORT = 18,
+    PADDLING = 19,
+    FLYING = 20,
+    E_BIKING = 21,
+    MOTORCYCLING = 22,
+    BOATING = 23,
+    DRIVING = 24,
+    GOLF = 25,
+    HANG_GLIDING = 26,
+    HORSEBACK_RIDING = 27,
+    HUNTING = 28,
+    FISHING = 29,
+    INLINE_SKATING = 30,
+    ROCK_CLIMBING = 31,
+    SAILING = 32,
+    ICE_SKATING = 33,
+    SKY_DIVING = 34,
+    SNOWSHOEING = 35,
+    SNOWMOBILING = 36,
+    STAND_UP_PADDLEBOARDING = 37,
+    SURFING = 38,
+    WAKEBOARDING = 39,
+    WATER_SKIING = 40,
+    KAYAKING = 41,
+    RAFTING = 42,
+    WINDSURFING = 43,
+    KITESURFING = 44,
+    TACTICAL = 45,
+    JUMPMASTER = 46,
+    BOXING = 47,
+    FLOOR_CLIMBING = 48,
+    ALL = 254
 
 class FITMessageDataType:
 	def __init__(self, name, typeField, size, packFormat, invalid, formatter=None):
@@ -368,8 +410,18 @@ class FITIO:
 		ActivityType.Running: 1,
 		ActivityType.Cycling: 2,
 		ActivityType.MountainBiking: 2,
-		ActivityType.Elliptical: 4,
+		ActivityType.Walking: 11,
+		ActivityType.Hiking: 17,
+		ActivityType.DownhillSkiing: 13,
+		ActivityType.CrossCountrySkiing: 11,
+		ActivityType.Snowboarding: 14,
+		ActivityType.Skating: 33,
 		ActivityType.Swimming: 5,
+		ActivityType.Rowing: 15,
+		ActivityType.Elliptical: 4,
+		ActivityType.Gym: 4,
+		ActivityType.Climbing: 31,
+		ActivityType.StrengthTraining: 4,
 	}
 	_subSportMap = {
 		# ActivityType.MountainBiking: 8 there's an issue with cadence upload and this type with GC, so...
