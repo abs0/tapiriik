@@ -63,8 +63,7 @@ class TrainAsONEService(ServiceBase):
 
         authorizationData = {"OAuthToken": data["access_token"]}
 
-        id_resp = requests.get(TRAINASONE_SERVER_URL + "/api/sync/user", headers=self._apiHeaders(authorizationData))
-        return (id_resp.json()["id"], authorizationData)
+        return (data["user_id"], authorizationData)
 
     def RevokeAuthorization(self, serviceRecord):
         resp = requests.post(TRAINASONE_SERVER_URL + "/api/oauth/revoke", data={"token": serviceRecord.Authorization["OAuthToken"]}, headers=self._apiHeaders(serviceRecord.Authorization))
